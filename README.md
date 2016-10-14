@@ -60,13 +60,13 @@ project
 
 ### Contents:
 
-- `/code`: Code used in the generation of all histograms, plots, and regression data.
+- `/code`: Code used in the generation of all histograms, plots, and regression data, as well as functions used to calculate statistical parameters, and unit tests for those functions.
 
-- `/images`: Histograms and scatterplots used in the report, in both `.pdf` and `.png` formats.
+- `/images`: Histograms and scatterplots used in the report, in `.png` format.
 
-- `/data`: The original data (Advertising.csv), as well as summary statistics on the `TV` and `Sales` columns and regression data.
+- `/data`: The original data (Advertising.csv), as well as summary statistics on the various columns, summaries of the regressions carried out, and data on the correlations between all variables.
 
-- `/report`: The main report, in `.Rmd`, `.pdf`, and `.html` formats.
+- `/report`: The main report, in both `.Rmd`, and `.pdf` formats.
 
 ### Usage:
 
