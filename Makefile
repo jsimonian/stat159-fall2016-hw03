@@ -17,7 +17,7 @@ data:
 	curl $(url) > $@/Advertising.csv
 
 tests:
-	Rscript $(code)/$@/test-regression.R
+	Rscript $(code)/test-that.R
 
 eda: data
 	Rscript $(code)/$(scripts)/$@-script.R
