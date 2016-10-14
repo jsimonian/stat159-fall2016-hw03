@@ -1,25 +1,24 @@
-.PHONY: all data clean
+code = code
+url = http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv
 
-all: report/report.pdf report/report.html eda-output.txt regression.RData
+.PHONY: data tests eda regression report clean all
 
-report/report.pdf: report/report.Rmd
-	pandoc report/report.Rmd -s -o report/report.pdf
-
-report/report.html: report/report.Rmd
-	pandoc report/report.Rmd -s -o report/report.html
-
-report/report.Rmd: data/regression.RData images/scatterplot-tv-sales.png
-
-data/eda-output.txt: code/eda-script.R data/Advertising.csv
-	Rscript code/eda-script.R
-
-data/regression.RData: code/regression-script.R data/Advertising.csv
-	Rscript code/regression-script.R
-
-data/Advertising.csv: data
+all: eda regression report
 
 data:
-	curl "http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv" > data/Advertising.csv
+	curl $(url) > $@/Advertising.csv
+
+tests:
+	Rscript $(code)/$@/test-regression.R
+
+eda:
+	Rscript $(code)/scripts/$@-script.R
+
+regression:
+	Rscript $(code)/scripts/$@-script.R
+
+report: eda regression
+	pandoc $@/$@.Rmd -s -o $@/$@.pdf
 
 clean:
-	rm report/report.pdf; rm report/report.html
+	rm report/report.pdf
