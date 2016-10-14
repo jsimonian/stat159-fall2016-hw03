@@ -6,7 +6,7 @@ residual_sum_squares <- function(model) {
 
 # Total Sum of Squares (TSS): given an "lm" object, compute the TSS
 total_sum_squares <- function(model) {
-  sum(reg$effects^2) - reg$effects[[1]]^2
+  sum(model$effects^2) - model$effects[[1]]^2
 }
 
 # R Squared: given an "lm" object, compute the R^2 value
@@ -18,8 +18,8 @@ r_squared <- function(model) {
 
 # F-Statistic: given an "lm" object, compute the F-statistic
 f_statistic <- function(model) {
-  p <- length(reg$coefficients) - 1
-  n <- length(reg$residuals)
+  p <- length(model$coefficients) - 1
+  n <- length(model$residuals)
   RSS <- residual_sum_squares(model)
   TSS <- total_sum_squares(model)
   ((TSS - RSS) / p) / (RSS / (n - p - 1))
