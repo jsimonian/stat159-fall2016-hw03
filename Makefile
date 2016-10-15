@@ -6,7 +6,7 @@ report = report
 # in case the URL of the data changes - only one name to change
 url = http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv
 
-.PHONY: data tests eda regression report clean all
+.PHONY: data tests eda regression packages report clean all
 
 all: eda regression report
 
@@ -25,6 +25,9 @@ regression: data/Advertising.csv
 
 report: eda regression
 	Rscript -e "library(rmarkdown); render('$@/$@.Rmd')"
+
+packages:
+	Rscript code/install-packages.R
 
 data/Advertising.csv:
 	curl $(url) > $@

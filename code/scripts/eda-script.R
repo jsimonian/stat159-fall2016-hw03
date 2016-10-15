@@ -1,3 +1,5 @@
+require("corrplot")
+
 setwd("./data")
 advertising <- read.csv(file="Advertising.csv",head=TRUE,sep=",")
 
@@ -48,11 +50,25 @@ png('scatterplot-matrix.png')
 pairs(advertising[2:5], title="Scatter plots for all variable pairs")
 dev.off()
 
+corr_matrix = cor(advertising)
+
+png('correlation-matrix.png')
+corrplot(cor(advertising), method="square")
+dev.off()
+
 setwd("../data")
+
+save(corr_matrix, file="correlation-matrix.RData")
 
 sink("eda-output.txt")
 "TV Advertising Summary:"
 summary(TV_data)
+"Radio Advertising Summary:"
+summary(Radio_data)
+"Newspaper Advertising Summary:"
+summary(Newspaper_data)
 "Unit Sales Summary:"
 summary(Sales_data)
+"Correlation Matrix:"
+corr_matrix
 sink()

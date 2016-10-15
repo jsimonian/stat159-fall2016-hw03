@@ -1,4 +1,4 @@
-setwd("/data")
+setwd("./data")
 advertising <- read.csv(file="Advertising.csv",head=TRUE,sep=",")
 
 TV_data = advertising$TV
