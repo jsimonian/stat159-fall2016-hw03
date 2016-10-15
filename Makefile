@@ -24,7 +24,7 @@ regression: data/Advertising.csv
 	Rscript $(code)/$(scripts)/$@-script.R
 
 report: eda regression
-	Rscript -e "library(rmarkdown); render('$@/$@.Rmd')"
+	Rscript -e "library(rmarkdown); render('$@/$@.Rmd', output_format='pdf_document')"
 
 packages:
 	Rscript code/install-packages.R

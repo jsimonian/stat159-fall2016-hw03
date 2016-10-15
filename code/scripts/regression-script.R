@@ -4,12 +4,22 @@ advertising <- read.csv(file="Advertising.csv",head=TRUE,sep=",")
 TV_data = advertising$TV
 Sales_data = advertising$Sales
 
-# As stated in the report, no need to include Newspaper
-model = lm(formula = Sales ~ TV + Radio, data = advertising)
 
-model_summary = summary(model)
-
-save(model_summary, file = "regression.RData")
+TV_model <- lm(Sales ~ TV, data = advertising)
+Radio_model <- lm(Sales ~ Radio, data = advertising)
+Newspaper_model <- lm(Sales ~ Newspaper, data = advertising)
+TV_Radio_model <- lm(Sales ~ TV + Radio, data = advertising)
+TV_Newspaper_model <- lm(Sales ~ TV + Newspaper, data = advertising)
+Radio_Newspaper_model <- lm(Sales ~ Radio + Newspaper, data = advertising)
+Triple_model <- lm(Sales ~ TV + Radio + Newspaper, data = advertising)
+save(TV_model,
+     Radio_model,
+     Newspaper_model,
+     TV_Radio_model,
+     TV_Newspaper_model,
+     Radio_Newspaper_model,
+     Triple_model,
+     file = "regression.RData")
 
 setwd("../images")
 
@@ -49,13 +59,13 @@ dev.off()
 # R's plot commmand takes care of all three of these for us
 
 png('residual-plot.png')
-plot(model, which = 1)
+plot(TV_Radio_model, which = 1)
 dev.off()
 
 png('normal-qq-plot.png')
-plot(model, which = 2)
+plot(TV_Radio_model, which = 2)
 dev.off()
 
 png('scale-location-plot.png')
-plot(model, which = 3)
+plot(TV_Radio_model, which = 3)
 dev.off()
