@@ -1,8 +1,8 @@
 ---
-title: "Simple Regression Analysis"
+title: "Multiple Regression Analysis"
 author: "Joseph Simonian"
-date: "Oct 07, 2016"
-output: html_document
+date: "Oct 14, 2016"
+output: pdf_document
 ---
 
 ## Abstract
