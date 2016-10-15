@@ -10,7 +10,7 @@ Summaries of the `TV` and `Sales` columns from the Advertising dataset.
 
 ### regression.RData
 
-RData file containing information on a linear regression of Total Sales vs. TV Budget, again from the Advertising dataset.
+RData file containing information on a linear regression of Total Sales vs. TV Budget and Radio Budget, again from the Advertising dataset.
 
 ### correlation-matrix.RData
 
