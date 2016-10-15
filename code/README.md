@@ -1,7 +1,16 @@
-## Files in this Directory:
+## Components of this Directory:
 
-### eda-script.R
-Computes summary statistics on the `TV` and `Sales` columns of the Advertising dataset, and saves the data as "data/eda-output.txt". Also produces histograms of TV budget by region and Sales by region, in both pdf and png formats, and saves them to the "images" directory.
+### scripts:
+Compute summary statistics on the Advertising dataset, and produce histograms, scatterplots, and correlation matrixes. All of these are saved to the images directory, as `.png` files. Also save data on regressions created via `lm`, and on correlation between variables. This data is saved to the data directory in `.RData` files.
 
-### regression-script.R
-Computes a linear regression of Sales vs TV budget, from the Advertising dataset, and saves the data to the file "data/regression.RData". Also creates scatterplots of Sales vs TV budget, in both pdf and png formats, and saves them to the "images" directory.
+### functions
+Compute regression information such as RSS, $R^2$, F-statistics etc.
+
+### tests
+Tests for the functions defined in the functions subdirectory.
+
+### test-that.R
+Run all tests from the tests subdirectory.
+
+### install-packages.R
+Install the necessary packages to run the scripts in the scripts subdirectory.

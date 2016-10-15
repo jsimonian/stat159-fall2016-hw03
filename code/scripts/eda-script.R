@@ -50,10 +50,10 @@ png('scatterplot-matrix.png')
 pairs(advertising[2:5], title="Scatter plots for all variable pairs")
 dev.off()
 
-corr_matrix = cor(advertising)
+corr_matrix = cor(advertising[2:5])
 
 png('correlation-matrix.png')
-corrplot(cor(advertising), method="square")
+corrplot(corr_matrix, method="square")
 dev.off()
 
 setwd("../data")
