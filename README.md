@@ -1,12 +1,18 @@
-# Stat 159 - Homework 3
+# Stat 159 - Homework 3: Multiple Regression Analysis
 
 - [Author](#author)
+- [Description](#description)
 - [Project Structure](#project-structure)
 - [Contents](#contents)
 - [Usage](#usage)
+- [License](#license)
 
 
 ### Author: Joseph Simonian
+
+### Description:
+
+Expand on [Homework 2](https://github.com/jsimonian/stat159-hw02) of this course, by looking at multiple regressions. Also write functions and unit tests.
 
 ### Project Structure:
 
@@ -70,4 +76,8 @@ project
 
 ### Usage:
 
-To generate the pdf output of this homework, simply clone the repository and run `make all`.
+To generate the pdf output of this homework, simply clone the repository and run `make all`. You may also need to install certain `R` packages. To do so, run `make packages`.
+
+### License:
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
