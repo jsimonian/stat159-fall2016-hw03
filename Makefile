@@ -3,9 +3,6 @@ code = code
 scripts = scripts
 report = report
 
-# Report filetype
-rep_filetype = pdf
-
 # in case the URL of the data changes - only one name to change
 url = http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv
 
@@ -26,7 +23,7 @@ regression: data
 	Rscript $(code)/$(scripts)/$@-script.R
 
 report: eda regression
-	pandoc $@/$@.Rmd -s -o $@/$@.$(rep_filetype)
+	Rscript -e "library(rmarkdown); render('$@/$@.Rmd')"
 
 clean:
 	rm $(report)/$(report).$(rep_filetype)
