@@ -1,3 +1,3 @@
-sink('../../session-info.txt')
+sink('session-info.txt')
 sessionInfo()
 sink(NULL)
